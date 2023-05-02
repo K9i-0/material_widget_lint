@@ -1,0 +1,9 @@
+name: material_widget_lint
+repository: https://github.com/K9i-0/material_widget_lint
+
+packages:
+  - packages/**
+
+command:
+  version:
+    branch: main
