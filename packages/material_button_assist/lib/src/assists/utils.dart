@@ -7,7 +7,7 @@ const addOrRemoveIconPriority = 27;
 enum MaterialButtonType {
   elevated(
     buttonName: 'ElevatedButton',
-    constructorName: 'ElevatedButton',
+    className: 'ElevatedButton',
     priority: convertToOtherButtonPriority,
     typeChecker: TypeChecker.fromName(
       'ElevatedButton',
@@ -16,7 +16,7 @@ enum MaterialButtonType {
   ),
   filled(
     buttonName: 'FilledButton',
-    constructorName: 'FilledButton',
+    className: 'FilledButton',
     priority: convertToOtherButtonPriority,
     typeChecker: TypeChecker.fromName(
       'FilledButton',
@@ -25,7 +25,7 @@ enum MaterialButtonType {
   ),
   filledTonal(
     buttonName: 'FilledTonalButton',
-    constructorName: 'FilledButton.tonal',
+    className: 'FilledButton',
     priority: convertToOtherButtonPriority,
     typeChecker: TypeChecker.fromName(
       'FilledButton',
@@ -34,7 +34,7 @@ enum MaterialButtonType {
   ),
   outlined(
     buttonName: 'OutlinedButton',
-    constructorName: 'OutlinedButton',
+    className: 'OutlinedButton',
     priority: convertToOtherButtonPriority,
     typeChecker: TypeChecker.fromName(
       'OutlinedButton',
@@ -43,7 +43,7 @@ enum MaterialButtonType {
   ),
   text(
     buttonName: 'TextButton',
-    constructorName: 'TextButton',
+    className: 'TextButton',
     priority: convertToOtherButtonPriority,
     typeChecker: TypeChecker.fromName(
       'TextButton',
@@ -53,12 +53,12 @@ enum MaterialButtonType {
 
   const MaterialButtonType({
     required this.buttonName,
-    required this.constructorName,
+    required this.className,
     required this.priority,
     required this.typeChecker,
   });
   final String buttonName;
-  final String constructorName;
+  final String className;
   final int priority;
   final TypeChecker typeChecker;
 }
@@ -77,15 +77,43 @@ final allButtonType = TypeChecker.any(
   MaterialButtonType.values.map((e) => e.typeChecker),
 );
 
-final filledButtonType = TypeChecker.any([
-  MaterialButtonType.filled.typeChecker,
-  MaterialButtonType.filledTonal.typeChecker,
-]);
+final filledButtonType = TypeChecker.fromName(
+  'FilledButton',
+  packageName: 'flutter',
+);
 
 enum SupportedIdentifier {
   icon,
   tonal,
   tonalIcon,
+}
+
+extension SupportedIdentifierX on SupportedIdentifier? {
+  bool get isTonal {
+    switch (this) {
+      case SupportedIdentifier.icon:
+        return false;
+      case SupportedIdentifier.tonal:
+        return true;
+      case SupportedIdentifier.tonalIcon:
+        return true;
+      default:
+        return false;
+    }
+  }
+
+  bool get hasIcon {
+    switch (this) {
+      case SupportedIdentifier.icon:
+        return true;
+      case SupportedIdentifier.tonal:
+        return false;
+      case SupportedIdentifier.tonalIcon:
+        return true;
+      default:
+        return false;
+    }
+  }
 }
 
 SupportedIdentifier? getSupportedIdentifier(

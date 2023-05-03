@@ -29,11 +29,10 @@ class ConvertToOtherButton extends DartAssist {
 
       final simpleIdentifier = node.constructorName.name;
       final isFilledButton = filledButtonType.isExactlyType(createdType);
-      final isTonal =
-          simpleIdentifier != null && simpleIdentifier.name == 'tonal';
+      final supportedIdentifier = getSupportedIdentifier(simpleIdentifier);
 
       if (isFilledButton) {
-        if (isTonal) {
+        if (supportedIdentifier.isTonal) {
           if (targetType == MaterialButtonType.filledTonal) return;
         } else {
           if (targetType == MaterialButtonType.filled) return;
@@ -49,10 +48,28 @@ class ConvertToOtherButton extends DartAssist {
         (builder) {
           builder.addSimpleReplacement(
             node.constructorName.sourceRange,
-            targetType.constructorName,
+            targetType.className +
+                _getReplacementIdentifier(supportedIdentifier, targetType),
           );
         },
       );
     });
+  }
+
+  String _getReplacementIdentifier(
+      SupportedIdentifier? identifier, MaterialButtonType targetType) {
+    if (identifier.hasIcon) {
+      if (targetType == MaterialButtonType.filledTonal) {
+        return '.tonalIcon';
+      } else {
+        return '.icon';
+      }
+    } else {
+      if (targetType == MaterialButtonType.filledTonal) {
+        return '.tonal';
+      } else {
+        return '';
+      }
+    }
   }
 }

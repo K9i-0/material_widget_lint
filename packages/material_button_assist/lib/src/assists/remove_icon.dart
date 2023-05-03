@@ -23,8 +23,7 @@ class RemoveIcon extends DartAssist {
       final simpleIdentifier = node.constructorName.name;
       final supportedIdentifier = getSupportedIdentifier(simpleIdentifier);
 
-      if (supportedIdentifier == null ||
-          supportedIdentifier == SupportedIdentifier.tonal) return;
+      if (!supportedIdentifier.hasIcon) return;
 
       final changeBuilder = reporter.createChangeBuilder(
         message: 'Remove icon',

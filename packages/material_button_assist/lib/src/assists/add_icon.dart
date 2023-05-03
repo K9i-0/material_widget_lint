@@ -23,8 +23,7 @@ class AddIcon extends DartAssist {
       final simpleIdentifier = node.constructorName.name;
       final supportedIdentifier = getSupportedIdentifier(simpleIdentifier);
 
-      if (supportedIdentifier == SupportedIdentifier.icon ||
-          supportedIdentifier == SupportedIdentifier.tonalIcon) return;
+      if (supportedIdentifier.hasIcon) return;
 
       final changeBuilder = reporter.createChangeBuilder(
         message: 'Add icon',
