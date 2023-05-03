@@ -1,39 +1,29 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
-
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+# material_button_assist
+material_button_assist is an assistant that makes using [Common buttons] easier.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+material_button_assist is implemented using [custom_lint]. As such, it uses custom_lint's installation logic.
 
-## Usage
+Long story short:
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+- Add both material_button_assist and custom_lint to your `pubspec.yaml`:
+  ```yaml
+  dev_dependencies:
+    custom_lint:
+    material_button_assist:
+  ```
+- Enable `custom_lint`'s plugin in your `analysis_options.yaml`:
 
-```dart
-const like = 'sample';
-```
+  ```yaml
+  analyzer:
+    plugins:
+      - custom_lint
+  ```
 
-## Additional information
+## Features
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+
+
+[Common buttons]: https://m3.material.io/components/buttons/overview
+[custom_lint]: https://pub.dev/packages/custom_lint
