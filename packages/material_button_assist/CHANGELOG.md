@@ -1,5 +1,6 @@
 ## 1.0.0
 
+ - Initial version.
  - **FIX**: Convert to Button with icon bug. ([e99e4471](https://github.com/K9i-0/material_widget_lint/commit/e99e447182e3760ce5de63a0153d585cb4ea837a))
  - **FEAT**: Add icon & Remove icon. ([ef357d63](https://github.com/K9i-0/material_widget_lint/commit/ef357d639733bd94f25d28db589060fd793ede9d))
  - **FEAT**: ConvertToOtherButton. ([68edebcb](https://github.com/K9i-0/material_widget_lint/commit/68edebcb6cb27c60db82ad9e1ef9cceb51686076))
@@ -8,7 +9,3 @@
  - **DOCS**: update readme. ([1ba0afed](https://github.com/K9i-0/material_widget_lint/commit/1ba0afed29931f1ac6b55d4709bc361f401e354e))
  - **DOCS**: update readme. ([d20a9a50](https://github.com/K9i-0/material_widget_lint/commit/d20a9a50c9ae14ac245ed9c9373a6815ddb5a33f))
  - **DOCS**: update readme. ([37a5725c](https://github.com/K9i-0/material_widget_lint/commit/37a5725cef14e717101ab28b1fec3390b3a3f236))
-
-## 1.0.0
-
-- Initial version.
