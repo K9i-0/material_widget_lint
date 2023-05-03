@@ -22,7 +22,7 @@ class MainApp extends StatelessWidget {
                 onPressed: () {},
                 child: const Text('Hello World!'),
               ),
-              FilledButton.tonal(
+              FilledButton(
                 onPressed: () {},
                 child: const Text('Hello World!'),
               ),
