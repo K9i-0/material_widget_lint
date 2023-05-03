@@ -1,6 +1,7 @@
 name: material_button_assist
 description: material_button_assist is an assistant that makes using Material Design's Common buttons easier.
 version: 1.0.0
+homepage: https://twitter.com/K9i_apps
 repository: https://github.com/K9i-0/material_widget_lint
 
 environment:
