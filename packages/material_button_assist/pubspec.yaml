@@ -1,0 +1,11 @@
+name: material_button_assist
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+repository: https://github.com/K9i-0/material_widget_lint
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  custom_lint_builder: ^0.3.4
+  analyzer: ^5.7.0

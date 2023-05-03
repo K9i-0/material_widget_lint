@@ -28,3 +28,9 @@ pubspec.lock
 .dart_tool/
 .packages
 build/
+
+# fvm
+.fvm/flutter_sdk
+
+# example
+packages/material_button_assist/example/web
