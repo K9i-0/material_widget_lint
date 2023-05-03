@@ -1,3 +1,3 @@
 # example
 
-A new Flutter project.
+material_button_assist example project.
